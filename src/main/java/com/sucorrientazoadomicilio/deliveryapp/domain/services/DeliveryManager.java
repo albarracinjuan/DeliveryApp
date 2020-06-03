@@ -8,6 +8,7 @@ import com.sucorrientazoadomicilio.deliveryapp.ports.driven.DroneServicePort;
 import com.sucorrientazoadomicilio.deliveryapp.ports.drivers.DeliveryManagerPort;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 import static com.sucorrientazoadomicilio.deliveryapp.domain.GlobalConstants.AVAILABLE_DRONES;
 
@@ -37,8 +38,6 @@ public class DeliveryManager implements DeliveryManagerPort {
     }
 
     private void assignDronesToDeliveries(List<Delivery> deliveries, List<Drone> drones) {
-        for (int i = 0; i < AVAILABLE_DRONES; i++) {
-            deliveries.get(i).setAssignedDrone(drones.get(i));
-        }
+        IntStream.range(0, AVAILABLE_DRONES).forEach(i -> deliveries.get(i).setAssignedDrone(drones.get(i)));
     }
 }
