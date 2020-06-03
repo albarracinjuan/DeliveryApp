@@ -3,7 +3,7 @@
 Technical test.
 
 ## Compile
-To compile this project is needed:
+To compile this project you need:
 * java 1.8 o superior [link](https://openjdk.java.net/install/)
 
 ## Build With Gradle
